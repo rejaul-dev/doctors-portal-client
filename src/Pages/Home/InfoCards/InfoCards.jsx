@@ -14,14 +14,14 @@ const InfoCards = () => {
       bgClass: "bg-gradient-to-r from-primary to-secondary",
     },
     {
-      id: 1,
+      id: 2,
       name: "Visit Our Location",
       descriptions: "Open 9am to 5pm everyday",
       icon: marker,
       bgClass: "bg-accent",
     },
     {
-      id: 1,
+      id: 3,
       name: "Contact Us Now",
       descriptions: "Open 9am to 5pm everyday",
       icon: phone,

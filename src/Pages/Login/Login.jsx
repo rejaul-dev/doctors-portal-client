@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import useToken from "../../Hooks/useToken";
 
 const Login = () => {
   const { signInUser } = useContext(AuthContext);
@@ -12,10 +13,16 @@ const Login = () => {
   } = useForm();
 
   const [loginError, setLoginError] = useState("");
-  const location = useLocation()
-  const navigate = useNavigate()
+  const [loginUserEmail, setLoginEmail] = useState("");
+  const [token] = useToken(loginUserEmail);
 
-  const from = location?.state?.pathname || '/'
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location?.state?.pathname || "/";
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   const handleLogin = (data) => {
     // to reset error
@@ -25,7 +32,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate(from, {replace: true})
+        setLoginEmail(data.email);
       })
       .catch((error) => {
         console.error(error.message);
@@ -81,9 +88,7 @@ const Login = () => {
             type="submit"
             value="Login"
           />
-          <div>
-            {loginError && <p>{loginError}</p>}
-          </div>
+          <div>{loginError && <p>{loginError}</p>}</div>
         </form>
         <p>
           New to doctors portal?{" "}

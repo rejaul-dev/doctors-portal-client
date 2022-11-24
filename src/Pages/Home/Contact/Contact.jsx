@@ -10,12 +10,9 @@ const Contact = () => {
         <h2 className="text-4xl text-white">Stay connected with us</h2>
       </div>
       <section className="p-6 dark:text-gray-100">
-        <form
-          novalidate=""
-          className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md"
-        >
+        <form className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md">
           <div>
-            <label for="name" className="block mb-1 ml-1">
+            <label htmlFor="name" className="block mb-1 ml-1">
               Name
             </label>
             <input
@@ -27,7 +24,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label for="email" className="block mb-1 ml-1">
+            <label htmlFor="email" className="block mb-1 ml-1">
               Email
             </label>
             <input
@@ -39,7 +36,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label for="message" className="block mb-1 ml-1">
+            <label htmlFor="message" className="block mb-1 ml-1">
               Message
             </label>
             <textarea
