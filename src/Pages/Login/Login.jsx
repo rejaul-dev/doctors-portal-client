@@ -28,12 +28,14 @@ const Login = () => {
     // to reset error
     setLoginError();
     console.log(data);
+    
     signInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
         console.log(user);
         setLoginEmail(data.email);
       })
+
       .catch((error) => {
         console.error(error.message);
         setLoginError(error.message);

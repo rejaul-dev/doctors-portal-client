@@ -31,7 +31,7 @@ const BookingModal = ({ treatment, selectedDate, setTreatment, refetch }) => {
     // and once data is saved then close the modal
     // and display toast
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://doctors-portal-server-rose-chi.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

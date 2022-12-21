@@ -1,18 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../../Pages/Home/Home/Home";
-import Main from "../../layout/Main";
-import Login from "../../Pages/Login/Login";
-import Appointment from "../../Pages/Appointment/Appointment/Appointment";
-import SignUp from "../../Pages/SignUp/SignUp";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import DashboardLayout from "../../layout/DashboardLayout";
-import MyAppointment from "../../Pages/Dashboard/Dashboard/MyAppointment/MyAppointment";
+import Main from "../../layout/Main";
+import Appointment from "../../Pages/Appointment/Appointment/Appointment";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
-import AdminRoute from "../AdminRoute/AdminRoute";
 import AddDoctor from "../../Pages/Dashboard/Dashboard/AddDoctor/AddDoctor";
+import MyAppointment from "../../Pages/Dashboard/Dashboard/MyAppointment/MyAppointment";
 import ManageDoctors from "../../Pages/Dashboard/ManageDoctors/ManageDoctors";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
+import Home from "../../Pages/Home/Home/Home";
+import Login from "../../Pages/Login/Login";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
+import SignUp from "../../Pages/SignUp/SignUp";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -77,13 +77,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/payment/:id",
-        element: (
-          <AdminRoute>
-            <Payment />
-          </AdminRoute>
-        ),
+        element: <Payment />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/bookings/${params.id}`),
+          fetch(
+            `https://doctors-portal-server-rose-chi.vercel.app/bookings/${params.id}`
+          ),
       },
     ],
   },
