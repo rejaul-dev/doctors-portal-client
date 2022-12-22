@@ -1,7 +1,7 @@
 import React from "react";
-import chair from "../../../assets/images/chair.png";
-import bg from "../../../assets/images/bg.png";
 import { DayPicker } from "react-day-picker";
+import bg from "../../../assets/images/bg.png";
+import chair from "../../../assets/images/chair.png";
 
 const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
   return (
@@ -14,6 +14,7 @@ const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
           <img src={chair} className="max-w-sm rounded-lg shadow-2xl" alt="" />
           <div className="mr-6">
             <DayPicker
+            className="bg-white rounded-xl p-4"
               mode="single"
               selected={selectedDate}
               onSelect={setSelectedDate}

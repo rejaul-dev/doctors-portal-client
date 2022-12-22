@@ -28,7 +28,7 @@ const Login = () => {
     // to reset error
     setLoginError();
     console.log(data);
-    
+
     signInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
@@ -95,7 +95,7 @@ const Login = () => {
         <p>
           New to doctors portal?{" "}
           <Link className="text-secondary" to="/signup">
-            Create new account
+            Create a account
           </Link>
         </p>
         <div className="divider">OR</div>

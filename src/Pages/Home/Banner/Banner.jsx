@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import bg from "../../../assets/images/bg.png";
 import chair from "../../../assets/images/chair.png";
-import bg from "../../../assets/images/bg.png"
 import PrimaryButton from "../../../components/PrimaryButton/PrimaryButton";
 
 
@@ -19,7 +20,7 @@ const Banner = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the
           </p>
-            <PrimaryButton>Get Started</PrimaryButton>
+            <Link to='/appointment'><PrimaryButton>Get Started</PrimaryButton></Link>
         </div>
       </div>
     </div>
